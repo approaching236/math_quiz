@@ -22,18 +22,18 @@ module Fraction
     end
   end
 
-  class MissingAddend
+  class MultiplyFractions
     def initialize
-      @a = rand(15)
-      @b = rand(15)
+      @a = Rational(rand(10), rand(10) + 1)
+      @b = Rational(rand(10), rand(10) + 1)
     end
 
     def ask
-      "#{@a} + _ = #{@a+@b}"
+      "Remember to reduce!\n#{@a} * #{@b} = ?"
     end
 
     def answer
-      @b.to_s
+      (@a * @b).to_s
     end
   end
 end

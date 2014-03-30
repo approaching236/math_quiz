@@ -1,6 +1,5 @@
 require './fraction'
 require './addition'
-include Fraction
 
 class Question
   def initialize question_types
@@ -20,23 +19,25 @@ class Question
       end
 
       if guess.match question_type.answer
-        puts "** WOOHOO **"
+        puts "You got it right!"
         right = right + 1
       else
-        puts "the answer was: #{question_type.answer}"
+        puts "Didn't get it this time, the answer was: #{question_type.answer}"
         wrong = wrong + 1
       end
-      puts "right: #{right} wrong: #{wrong}"
+      puts "Score: #{right - wrong}"
       puts
     end
   end
 end
 
 question_types = []
-# question_types << MissingAddend
-# question_types << Add
-# question_types << Fraction::MultiplyFractions
+question_types << Addition::MissingAddend
+question_types << Addition::Add
+question_types << Fraction::MultiplyFractions
 question_types << Fraction::CompareFractions
 
 puts question_types
+puts
+
 Question.new(question_types).loop
