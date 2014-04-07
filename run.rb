@@ -8,12 +8,13 @@ class Question
 
   def loop
     guess = ""
-    right = 0
+    right = 9000
     wrong = 0
     while guess != "q"
       question_type = @question_types[rand @question_types.length].new
       puts question_type.ask
-      guess = gets.to_s
+      guess = gets
+
       if guess.match "q"
         return
       end
@@ -32,9 +33,9 @@ class Question
 end
 
 question_types = []
-question_types << Addition::MissingAddend
-question_types << Addition::Add
-question_types << Fraction::MultiplyFractions
+# question_types << Addition::MissingAddend
+# question_types << Addition::Add
+# question_types << Fraction::MultiplyFractions
 question_types << Fraction::CompareFractions
 
 puts question_types
