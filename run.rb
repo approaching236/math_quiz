@@ -22,8 +22,7 @@ class Question
         return
       end
 
-      # TODO Will allow 7 as answer for -7
-      if guess.match question_type.answer
+      if guess == question_type.answer.strip
         puts "You got it right!"
         right = right + 1
       else
