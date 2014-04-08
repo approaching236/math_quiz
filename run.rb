@@ -18,9 +18,11 @@ class Question
       guess = gets
 
       if guess.match "q"
+        puts "Right on, out of #{right + wrong} questions, you got #{right} right and #{wrong} wrong."
         return
       end
 
+      # TODO Will allow 7 as answer for -7
       if guess.match question_type.answer
         puts "You got it right!"
         right = right + 1
@@ -41,6 +43,7 @@ question_types = []
 # question_types << Fraction::CompareFractions
 # question_types << Decimal::CompareDecimals
 question_types << MyInteger::AddIntegers
+question_types << MyInteger::MultiplyIntegers
 
 puts question_types
 puts

@@ -34,4 +34,19 @@ module MyInteger
       (@a + @b).to_s
     end
   end
+
+  class MultiplyIntegers
+    def initialize
+      @a = rand(50) - 25
+      @b = rand(50) - 25
+    end
+
+    def ask
+      "#{@a} * #{@b} = ?"
+    end
+
+    def answer
+      (@a * @b).to_s
+    end
+  end
 end
