@@ -1,5 +1,7 @@
 require './fraction'
 require './addition'
+require './decimal'
+require './integer'
 
 class Question
   def initialize question_types
@@ -8,7 +10,7 @@ class Question
 
   def loop
     guess = ""
-    right = 9000
+    right = 0
     wrong = 0
     while guess != "q"
       question_type = @question_types[rand @question_types.length].new
@@ -36,7 +38,9 @@ question_types = []
 # question_types << Addition::MissingAddend
 # question_types << Addition::Add
 # question_types << Fraction::MultiplyFractions
-question_types << Fraction::CompareFractions
+# question_types << Fraction::CompareFractions
+# question_types << Decimal::CompareDecimals
+question_types << MyInteger::AddIntegers
 
 puts question_types
 puts
